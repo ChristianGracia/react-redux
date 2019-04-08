@@ -16,10 +16,15 @@
     <div id="app"></div>
 
     <script type="text/babel">
-        class App extends React.Component { render() { return (
+        class App extends React.Component {
+            state = {
+                name: "christian",
+                age: 24
+            }
+            render() { return (
         <div className="app-content">
             <h1>SUP USER</h1>
-            <p>{Math.random()*10}</p>
+            <p>My name is: { this.state.name }</p>
         </div>
         ) } } ReactDOM.render(
         <App />, document.getElementById('app'));
