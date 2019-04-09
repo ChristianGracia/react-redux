@@ -25,7 +25,10 @@
                 console.log(e.target);
             }
             handleMouseOver(e){
-                console.log(e.target);
+                console.log(e.target, e.pageX);
+            }
+            handleCopy(e){
+                console.log("try being original for once");
             }
             render() { return (
         <div className="app-content">
@@ -33,6 +36,7 @@
             <p>My name is: { this.state.name } and I am {this.state.age}</p>
             <button onClick={this.handleClick}>Click Me</button>
             <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+            <p onCopy={this.handleCopy}>What's Guccci</p>
             
         </div>
         ) } } ReactDOM.render(
