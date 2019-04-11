@@ -17,14 +17,26 @@
 
     <script type="text/babel">
         class App extends React.Component {
-            state = {
-                name: "christian",
-                age: 24
-            }
-            render() { return (
-            <div className="app-content">
-            <h1>My name is { this.state.name }</h1>
+            state = { name: "christian", age: 24 } 
             
+            handleChange = (e) => { 
+                this.setState({
+                    name: e.target.value
+                    
+                }); 
+                
+            } 
+                
+                
+                
+                
+                render() { return (
+        <div className="app-content">
+            <h1>My name is { this.state.name }</h1>
+            <form>
+                <input type="text" onChange= {this.handleChange} />
+                <button>Submit</button>
+            </form>
         </div>
         ) } } ReactDOM.render(
         <App />, document.getElementById('app'));
