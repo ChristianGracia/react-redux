@@ -21,23 +21,23 @@
                 name: "christian",
                 age: 24
             }
-            handleClick(e){
+            handleClick = (e) => {
                 console.log(e.target);
                 console.log(this.state);
             }
-            handleMouseOver(e){
+            handleMouseOver = (e) => {
                 console.log(e.target, e.pageX);
             }
-            handleCopy(e){
+            handleCopy = (e) => {
                 console.log("try being original for once");
             }
             render() { return (
-        <div className="app-content">
+            <div className="app-content">
             <h1>SUP USER</h1>
-            <p>My name is: { this.state.name } and I am {this.state.age}</p>
+            <p>My name is: {this.state.name} and I am {this.state.age}</p>
             <button onClick={this.handleClick}>Click Me</button>
             <button onMouseOver={this.handleMouseOver}>Hover Me</button>
-             <p onCopy={this.handleCopy}>What is Gucci</p>
+            <p onCopy={this.handleCopy}>What is Gucci</p>
             
         </div>
         ) } } ReactDOM.render(
