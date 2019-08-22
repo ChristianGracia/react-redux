@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Test from "./Test";
+import Test from "./MediaObjects";
 
 class App extends Component {
   render() {
