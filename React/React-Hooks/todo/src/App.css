@@ -13,12 +13,26 @@
   padding: 20px;
   color: white;
 }
-.todo {
-  background-color: "blue";
-}
 
 .App-intro {
   font-size: large;
+}
+.todo {
+  background: #fff;
+
+  padding: 3px 10px;
+
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todoList {
+  background: "blue";
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 4000;
 }
 
 @keyframes App-logo-spin {
