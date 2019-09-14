@@ -13,8 +13,16 @@ class Card extends Component {
     fetch("https://cors-anywhere.herokuapp.com/https://randomuser.me/api/")
       .then(data => data.json())
       .then(data => {
+        const name = `${data.results[0].name.first} ${data.results[0].name.last}`;
+
+        const nameArray = name.split(" ");
+        const firstName =
+          nameArray[0].substr(0, 1).toUpperCase() + nameArray[0].substr(1);
+        const lastName =
+          nameArray[1].substr(0, 1).toUpperCase() + nameArray[1].substr(1);
+
         this.setState({
-          name: `${data.results[0].name.first} ${data.results[0].name.last}`,
+          name: firstName + " " + lastName,
           imageUrl: data.results[0].picture.large,
           location:
             data.results[0].location.street +
