@@ -7,7 +7,13 @@ import "./card-style.css";
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", imageUrl: "", email: "", cell: "" };
+    this.state = {
+      name: "",
+      imageUrl: "",
+      email: "",
+      cell: "",
+      search: ""
+    };
   }
   componentDidMount() {
     fetch("https://cors-anywhere.herokuapp.com/https://randomuser.me/api/")
@@ -46,6 +52,7 @@ class Card extends Component {
           location={this.state.location}
           cell={this.state.cell}
         />
+        <p>d{this.state.search}</p>
       </div>
     );
   }
