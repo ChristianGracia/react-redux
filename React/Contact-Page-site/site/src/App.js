@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       people: [],
       images: [],
-      names: [],
+      peopleNames: [],
       imageUrl: []
     };
   }
@@ -16,21 +16,8 @@ class App extends Component {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
       .then(users => this.setState({ people: users }));
-
-    for (var i = 0; i < 20; i++) {
-      fetch("https://randomuser.me/api/")
-        .then(data => data.json())
-        .then(data => {
-          var name = `${data.results[0].name.first} ${data.results[0].name.last}`;
-          console.log(name);
-          this.setState({
-            names: [...this.state.names, name],
-            imageUrl: data.results[0].picture.medium
-          });
-        });
-    }
-    console.log(this.state.names);
   }
+
   render() {
     return (
       <div className="App">
