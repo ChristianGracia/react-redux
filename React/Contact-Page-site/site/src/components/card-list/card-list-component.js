@@ -21,14 +21,6 @@ export const CardList = props => {
       <Card />
       <Card />
       <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
     </div>
   );
 };

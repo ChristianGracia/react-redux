@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import { CardList } from "./components/card-list/card-list-component";
+import CardDisplay from "./components/card-display/card-display-component";
 import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
     return (
       <div className="App">
-        <CardList />
+        <CardDisplay />
       </div>
     );
   }
