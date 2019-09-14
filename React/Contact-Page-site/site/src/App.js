@@ -1,5 +1,6 @@
-import "./App.css";
 import React, { Component } from "react";
+import { CardList } from "./components/card-list-component";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -16,6 +17,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <CardList name="chris">
+          <h1>hello</h1>
+        </CardList>
         {this.state.people.map(person => (
           <h1 key={person.id}>{person.name}</h1>
         ))}
