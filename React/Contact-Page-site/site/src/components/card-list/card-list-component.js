@@ -5,9 +5,30 @@ import "./card-list.styles.css";
 export const CardList = props => {
   return (
     <div className="card-list">
-      {props.people.map(person => (
-        <Card key={person.id} person={person} />
-      ))}
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 };

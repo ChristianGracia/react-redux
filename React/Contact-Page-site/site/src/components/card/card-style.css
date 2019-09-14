@@ -15,3 +15,6 @@
 .card-container:hover {
   transform: scale(1.05);
 }
+.fields {
+  font-weight: bold;
+}

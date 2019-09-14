@@ -5,23 +5,13 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      people: [],
-      images: [],
-      peopleNames: [],
-      imageUrl: []
-    };
-  }
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
-      .then(users => this.setState({ people: users }));
+    this.state = {};
   }
 
   render() {
     return (
       <div className="App">
-        <CardList people={this.state.people} />
+        <CardList />
       </div>
     );
   }
