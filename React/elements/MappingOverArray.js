@@ -1,3 +1,4 @@
+import logo from "./logo.svg";
 import "./App.css";
 import React, { Component } from "react";
 
@@ -5,13 +6,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: []
+      people: [
+        {
+          name: "John Josephs",
+          id: "1"
+        },
+        {
+          name: "Mary Winter",
+          id: "2"
+        },
+        {
+          name: "Mark Bates",
+          id: "3"
+        }
+      ]
     };
-  }
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
-      .then(users => this.setState({ people: users }));
   }
   render() {
     return (
