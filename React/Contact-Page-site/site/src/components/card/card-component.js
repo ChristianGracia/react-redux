@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { ImageGetter } from "../images/image-component";
+import { CardInfo } from "../card-info/card-info-component";
+
 import "./card-style.css";
 
 class Card extends Component {
@@ -30,10 +32,12 @@ class Card extends Component {
     return (
       <div className="card-container">
         <ImageGetter url={this.state.imageUrl} />
-        <p className="fields">Email: {this.state.email}</p>
-        <p className="fields">Name: {this.state.name}</p>
-        <p className="fields">Address: {this.state.location}</p>
-        <p className="fields">Cell: {this.state.cell}</p>
+        <CardInfo
+          email={this.state.email}
+          name={this.state.name}
+          location={this.state.location}
+          cell={this.state.cell}
+        />
       </div>
     );
   }
