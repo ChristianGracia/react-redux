@@ -13,7 +13,6 @@ class CardList extends Component {
 
   handleChange(e) {
     this.setState({ query: e.nativeEvent.target.value });
-    console.log(this.state.query);
   }
   render() {
     return (
@@ -23,25 +22,26 @@ class CardList extends Component {
           type="search"
           placeholder="Search random 25"
           onChange={this.handleChange}
+          value={this.state.query}
         />
         <div style={{ padding: 10 }}></div>
         <div className="card-list">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
+          <Card search={this.state.query} />
         </div>
       </div>
     );
