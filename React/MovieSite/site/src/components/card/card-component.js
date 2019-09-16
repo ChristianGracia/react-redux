@@ -6,18 +6,22 @@ import "./card-style.css";
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      movies: this.props.search,
+      name: ""
+    };
   }
 
-  componentDidMount() {
-    // console.log(this.props.search);
+  componentDidUpdate() {
+    // console.log(this.props.search[0].Title);
+    // console.log("hi");
+    console.log(this.props.search);
   }
 
   render() {
     return (
       <div className="card-container">
         <ImageGetter url={this.state.imageUrl} />
-        <p>{}</p>
       </div>
     );
   }

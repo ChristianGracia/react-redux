@@ -19,9 +19,7 @@ class CardList extends Component {
       .then(data => data.json())
       .then(data => {
         var joined = this.state.movieArray.concat(data.Search);
-
         this.setState({ movieArray: joined });
-        console.log(this.state.movieArray);
       });
   }
 
