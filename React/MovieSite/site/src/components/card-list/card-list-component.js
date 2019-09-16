@@ -18,12 +18,14 @@ class CardList extends Component {
     )
       .then(data => data.json())
       .then(data => {
-        var movieArray = [];
+        var array = [];
 
-        data.Search.map(item => movieArray.push(item));
-        this.setState({ movieArray: movieArray });
-        console.log(this.state.movieArray);
+        for (var i = 0; i < 10; i++) {
+          array[i] = data.Search[i];
+        }
+        this.setState({ movieArray: array });
       });
+    console.log("arr" + this.state.movieArray);
   }
 
   handleChange(e) {
@@ -32,31 +34,16 @@ class CardList extends Component {
   render() {
     return (
       <div>
-        <h1>FriendFinder</h1>
+        <h1>Movie Search</h1>
         <input
           type="search"
-          placeholder="Search random 25"
+          placeholder="Search movies"
           onChange={this.handleChange}
           value={this.state.query}
         />
         <div style={{ padding: 10 }}></div>
         <div className="card-list">
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
-          <Card search={this.state.query} />
+          <Card search={this.state.movieArray} />
         </div>
       </div>
     );

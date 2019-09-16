@@ -8,18 +8,16 @@ class Card extends Component {
     super(props);
     this.state = {};
   }
+
   componentDidMount() {
-    fetch("https://cors-anywhere.herokuapp.com/https://randomuser.me/api/")
-      .then(data => data.json())
-      .then(data => {
-        this.setState({});
-      });
+    console.log(this.props.search);
   }
 
   render() {
     return (
       <div className="card-container">
         <ImageGetter url={this.state.imageUrl} />
+        <p>{}</p>
       </div>
     );
   }
