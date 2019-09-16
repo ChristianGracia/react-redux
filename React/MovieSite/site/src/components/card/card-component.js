@@ -10,7 +10,7 @@ class Card extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.search);
+    // console.log(this.props.search);
   }
 
   render() {
