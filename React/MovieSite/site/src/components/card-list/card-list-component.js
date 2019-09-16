@@ -11,6 +11,16 @@ class CardList extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    fetch(
+      "https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?s=dogs&apikey=791727ae"
+    )
+      .then(data => data.json())
+      .then(data => {
+        console.log(data.Search);
+      });
+  }
+
   handleChange(e) {
     this.setState({ query: e.nativeEvent.target.value });
   }
