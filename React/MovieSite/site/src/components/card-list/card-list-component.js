@@ -6,7 +6,8 @@ class CardList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ""
+      query: "",
+      movieArray: []
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -17,7 +18,11 @@ class CardList extends Component {
     )
       .then(data => data.json())
       .then(data => {
-        console.log(data.Search);
+        var movieArray = [];
+
+        data.Search.map(item => movieArray.push(item));
+        this.setState({ movieArray: movieArray });
+        console.log(this.state.movieArray);
       });
   }
 
