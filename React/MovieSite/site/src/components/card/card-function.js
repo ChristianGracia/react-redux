@@ -4,7 +4,14 @@ export default function Card(props) {
   return (
     <div>
       {props.search.map(item => {
-        return <h1>{item.Title}</h1>;
+        return (
+          <div key={item.imdbID}>
+            <p>{item.Title}</p>
+            <p>{item.Year}</p>
+            <img src={item.Poster} />
+            <p>{item.Actors}</p>
+          </div>
+        );
       })}
     </div>
   );

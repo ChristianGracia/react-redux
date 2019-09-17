@@ -22,6 +22,9 @@ class CardList extends Component {
         this.setState({ movieArray: joined });
       });
   }
+  componentDidUpdate() {
+    console.log(this.state.movieArray);
+  }
 
   handleChange(e) {
     this.setState({ query: e.nativeEvent.target.value });
