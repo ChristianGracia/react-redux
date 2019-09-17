@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import CardDisplay from "./components/card-display/card-display-component";
+import RenderItems from "./RenderItems";
+
 import "./App.css";
 
 class App extends Component {
@@ -8,21 +9,27 @@ class App extends Component {
 
     this.state = {
       people: [
-        "chris",
-        "john",
-        "jake",
-        "joe",
-        "joseph",
-        "jork",
-        "brad",
-        "steve",
-        "susan"
-      ]
+        "chris  ",
+        "john  ",
+        "jake  ",
+        "joe  ",
+        "joseph  ",
+        "jork  ",
+        "brad  ",
+        "steve  ",
+        "susan  "
+      ],
+      query: ""
     };
   }
 
   render() {
-    const { people } = this.state;
+    const { people, query } = this.state;
+
+    const filteredItems = people.filter(person => {
+      person.includes(query);
+    });
+
     return (
       <div className="App">
         <h1>Hi</h1>
@@ -33,6 +40,8 @@ class App extends Component {
           }}
           value={this.state.query}
         />
+        <p>{filteredItems}</p>
+        <RenderItems query={filteredItems} />
       </div>
     );
   }
