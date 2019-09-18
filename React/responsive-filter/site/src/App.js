@@ -25,10 +25,9 @@ class App extends Component {
 
   render() {
     const { people, query } = this.state;
-
-    const filteredItems = people.filter(person => {
-      person.includes(query);
-    });
+    const filteredItems = people.filter(person =>
+      person.toLowerCase().includes(query.toLowerCase())
+    );
 
     return (
       <div className="App">
@@ -40,7 +39,7 @@ class App extends Component {
           }}
           value={this.state.query}
         />
-        <p>{filteredItems}</p>
+
         <RenderItems query={filteredItems} />
       </div>
     );
