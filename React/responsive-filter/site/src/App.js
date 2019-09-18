@@ -22,6 +22,12 @@ class App extends Component {
       query: ""
     };
   }
+  componentDidMount() {
+    fetch("https://baconipsum.com/api/?type=meat-and-filler")
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
+  }
 
   render() {
     const { people, query } = this.state;
