@@ -15,7 +15,7 @@ class App extends React.Component {
     this.setState(
       (prevState, prevProps) => {
         return {
-          hungryLevel: this.state.hungryLevel + 1
+          hungryLevel: this.state.hungryLevel + this.props.increment
         };
       },
       () => console.log(this.state.hungryLevel)

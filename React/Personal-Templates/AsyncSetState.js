@@ -12,6 +12,8 @@ class App extends React.Component {
   }
 
   handleClick = e => {
+    //increment prop would be in index.js
+    //used when setting state to this.state for safe state change
     this.setState(
       (prevState, prevProps) => {
         return {
