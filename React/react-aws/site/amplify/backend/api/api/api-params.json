@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "firstLambda",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "api",
+    "apiName": "api",
+    "functionArns": [
+        {
+            "lambdaFunction": "firstLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-site-site-01232-authRole",
+        "unAuthRoleName": "amplify-site-site-01232-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "firstLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
