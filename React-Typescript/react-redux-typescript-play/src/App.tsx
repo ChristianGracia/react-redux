@@ -3,12 +3,12 @@ import logo from "./logo.svg";
 // import { Counter } from './features/counter/Counter';
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <p>site</p>
     </div>
   );
-}
+};
 
 export default App;
