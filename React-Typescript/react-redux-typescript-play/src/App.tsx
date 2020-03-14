@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
-// import { Counter } from './features/counter/Counter';
+import { MainInfo } from "./components/main-info/main-info.component";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <p>site</p>
+      <MainInfo />
     </div>
   );
 };
