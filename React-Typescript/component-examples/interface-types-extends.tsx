@@ -28,11 +28,17 @@ export default function App(): JSX.Element {
     setTodos(newTodos);
   };
   const completeTodo = (index: number): void => {
-    const newTodos: ITodo[] = todos;
+    const newTodos: ITodo[] = [...todos];
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
+    console.log("completed");
   };
 
+  const removeTodo = (index: number): void => {
+    const newTodos: ITodo[] = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
   return (
     <Fragment>
       <h1>Typescript</h1>
@@ -48,9 +54,16 @@ export default function App(): JSX.Element {
       <section>
         {todos.map((todo: ITodo, index: number) => (
           <Fragment key={index}>
-            <div>{todo.text}</div>
+            <div
+              style={{ textDecoration: todo.complete ? "line-through" : "" }}
+            >
+              {todo.text}
+            </div>
             <button type="button" onClick={() => completeTodo(index)}>
               {todo.complete ? "Incomplete" : "Complete"}
+            </button>
+            <button type="button" onClick={() => removeTodo(index)}>
+              Remove Todo
             </button>
           </Fragment>
         ))}
