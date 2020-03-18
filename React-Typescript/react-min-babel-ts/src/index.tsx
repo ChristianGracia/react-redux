@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-export default function App(): JSX.Elment {
+export default function App(): JSX.Element {
   return <h1>Typescript</h1>;
 }
 
