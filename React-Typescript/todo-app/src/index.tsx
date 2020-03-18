@@ -1,16 +1,11 @@
 import React, { Fragment, useState } from "react";
 import ReactDOM from "react-dom";
 
-//interface creates a new type. extendable.
 interface ITodo {
   text: string;
   complete: boolean;
 }
-//extended
-interface ITodo1 extends ITodo {
-  tags: string[];
-}
-//type refers to a type that already exists
+
 type formElem = React.FormEvent<HTMLFormElement>;
 export default function App(): JSX.Element {
   const [value, setValue] = useState<string>("");
@@ -19,7 +14,7 @@ export default function App(): JSX.Element {
   const handleSubmit = (e: formElem): void => {
     e.preventDefault();
     addTodo(value);
-    console.log(todos);
+
     setValue("");
   };
 
@@ -31,7 +26,6 @@ export default function App(): JSX.Element {
     const newTodos: ITodo[] = [...todos];
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
-    console.log("completed");
   };
 
   const removeTodo = (index: number): void => {
