@@ -57,7 +57,7 @@ export default function App(): JSX.Element {
               {todo.complete ? "Incomplete" : "Complete"}
             </button>
             <button type="button" onClick={() => removeTodo(index)}>
-              Remove Todo
+              &times;
             </button>
           </Fragment>
         ))}
