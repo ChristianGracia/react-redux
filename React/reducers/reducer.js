@@ -4,16 +4,16 @@ import "./styles.css";
 
 export default function App() {
   const reducer = (state, action) => {
-    console.log(action);
-    const obj = {
-      ADD: state + 1,
-      SUB: state - 1,
-      RES: (state = 0)
-    };
-
-    console.log(action);
-    console.log(obj);
-    return obj[action];
+    switch (action) {
+      case "ADD":
+        return state + 1;
+      case "SUB":
+        return state - 1;
+      case "RES":
+        return (state = 0);
+      default:
+        return state;
+    }
   };
   //const [value, setValue] = React.useState("");
 
