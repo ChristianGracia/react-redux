@@ -13,7 +13,7 @@ export default function App() {
 
     console.log(action);
     console.log(obj);
-    return state;
+    return obj[action];
   };
   //const [value, setValue] = React.useState("");
 
@@ -23,6 +23,7 @@ export default function App() {
       <div>{count}</div>
       <button onClick={() => dispatch("ADD")}>+</button>
       <button onClick={() => dispatch("SUB")}>-</button>
-      <button>reset</button>
+      <button onClick={() => dispatch("RES")}>reset</button>
     </>
   );
+}
