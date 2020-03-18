@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-export default function App(): JSX.Element {
-  return <h1>Typescript</h1>;
-}
+import App from "./App";
+import { StoreProvider } from "./Store";
 
 const root = document.getElementById("app-root");
 ReactDOM.render(<App />, root);
