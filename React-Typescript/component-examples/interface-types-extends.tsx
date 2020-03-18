@@ -19,7 +19,6 @@ export default function App(): JSX.Element {
   const handleSubmit = (e: formElem): void => {
     e.preventDefault();
     addTodo(value);
-    console.log(todos);
     setValue("");
   };
 
@@ -31,7 +30,6 @@ export default function App(): JSX.Element {
     const newTodos: ITodo[] = [...todos];
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
-    console.log("completed");
   };
 
   const removeTodo = (index: number): void => {
