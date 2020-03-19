@@ -29,7 +29,14 @@ export default function App(): JSX.Element {
         {state.episodes.map(episode => {
           return (
             <section key={episode.id}>
-              <img src={episode.image.medium} />
+              <img
+                src={episode.image.medium}
+                alt={`Rick and morty ${episode.name}`}
+              />
+              <div>{episode.name}</div>
+              <section>
+                Seasion: {episode.season} Number: {episode.number}
+              </section>
             </section>
           );
         })}
