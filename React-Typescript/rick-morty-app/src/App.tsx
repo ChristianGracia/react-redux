@@ -22,7 +22,6 @@ export default function App(): JSX.Element {
 
   React.useEffect(() => {
     state.episodes.length === 0 && fetchDataAction();
-    // fetchDataAction();
   });
   const fetchDataAction = async () => {
     const URL =
@@ -39,12 +38,13 @@ export default function App(): JSX.Element {
   console.log(state);
   return (
     <React.Fragment>
+      <header className="header"></header>
       <h1>Ricky & Morty Video Picker</h1>
       <p>Pick your favorite episode!</p>
-      <section>
+      <section className="episode-layour">
         {state.episodes.map(episode => {
           return (
-            <section key={episode.id}>
+            <section key={episode.id} className="episode-box">
               <img
                 src={episode.image.medium}
                 alt={`Rick and morty ${episode.name}`}
