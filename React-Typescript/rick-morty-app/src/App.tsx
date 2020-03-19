@@ -25,6 +25,15 @@ export default function App(): JSX.Element {
     <React.Fragment>
       <h1>Ricky & Morty Video Picker</h1>
       <p>Pick your favorite episode!</p>
+      <section>
+        {state.episodes.map(episode => {
+          return (
+            <section key={episode.id}>
+              <img src={episode.image.medium} />
+            </section>
+          );
+        })}
+      </section>
     </React.Fragment>
   );
 }
