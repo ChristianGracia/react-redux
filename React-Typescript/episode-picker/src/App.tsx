@@ -1,6 +1,7 @@
 import React from "react";
-import { Store } from "./Store";
+import { Store, IAction } from "./Store";
 import "./index.css";
+
 interface IEpisode {
   id: string;
   url: string;
@@ -36,6 +37,11 @@ export default function App(): JSX.Element {
       payload: dataJSON._embedded.episodes
     });
   };
+  const toggleFavoriteAction = (episode: IEpisode): IAction =>
+    dispatch({
+      type: "ADD_FAV",
+      payload: episode
+    });
   console.log(state);
   return (
     <React.Fragment>
@@ -43,7 +49,7 @@ export default function App(): JSX.Element {
       <h1>Ricky & Morty Video Picker</h1>
       <p>Pick your favorite episode!</p>
       <section className="episodeLayout">
-        {state.episodes.map((episode: any) => {
+        {state.episodes.map((episode: IEpisode) => {
           return (
             <section key={episode.id} className="episode-box">
               <img
@@ -52,7 +58,15 @@ export default function App(): JSX.Element {
               />
               <div>{episode.name}</div>
               <section>
-                Seasion: {episode.season} Number: {episode.number}
+                <div>
+                  Seasion: {episode.season} Number: {episode.number}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => toggleFavoriteAction(episode)}
+                >
+                  Favorite
+                </button>
               </section>
             </section>
           );
