@@ -1,5 +1,6 @@
 import React from "react";
 import { Store } from "./Store";
+import "./index.css";
 interface IEpisode {
   id: string;
   url: string;
@@ -41,8 +42,8 @@ export default function App(): JSX.Element {
       <header className="header"></header>
       <h1>Ricky & Morty Video Picker</h1>
       <p>Pick your favorite episode!</p>
-      <section className="episode-layour">
-        {state.episodes.map(episode => {
+      <section className="episodeLayout">
+        {state.episodes.map((episode: any) => {
           return (
             <section key={episode.id} className="episode-box">
               <img
