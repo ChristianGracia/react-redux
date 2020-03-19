@@ -1,13 +1,5 @@
 import React from "react";
-
-interface IState {
-  episodes: [];
-  favorites: Array<any>;
-}
-export interface IAction {
-  type: string;
-  payload: any;
-}
+import { IState, IAction } from "./interfaces/interfaces";
 
 const initialState: IState = {
   episodes: [],
