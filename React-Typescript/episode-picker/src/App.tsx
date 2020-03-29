@@ -43,7 +43,7 @@ export default function App(): JSX.Element {
               <div>{episode.name}</div>
               <section>
                 <div>
-                  Seasion: {episode.season} Number: {episode.number}
+                  Season: {episode.season} Number: {episode.number}
                 </div>
                 <button
                   type="button"
