@@ -38,6 +38,7 @@ export default function App(): JSX.Element {
     }
     return dispatch(dispatchObj);
   };
+  console.log(state);
   return (
     <React.Fragment>
       <header className="header"></header>
@@ -60,8 +61,9 @@ export default function App(): JSX.Element {
                   type="button"
                   onClick={() => toggleFavoriteAction(episode)}
                 >
+                  {state.favorites.includes(episode) ? "Remove" : "Add"}{" "}
                   Favorite
-                </button>
+                </button>{" "}
               </section>
             </section>
           );
