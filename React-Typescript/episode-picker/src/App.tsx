@@ -21,12 +21,20 @@ export default function App(): JSX.Element {
       payload: dataJSON._embedded.episodes
     });
   };
-  const toggleFavoriteAction = (episode: IEpisode): IAction =>
-    dispatch({
-      type: "ADD_FAV",
+  const toggleFavoriteAction = (episode: IEpisode): IAction => {
+  const episodeInFav = state.favorites.includes(episode)
+  let dispatchObj = {
+    type:'ADD_FAV',
+    payload: episode
+  }
+  if(episodeInFav){
+    dispatchObj = {
+      type: 'REMOVE_FAV',
       payload: episode
-    });
-  console.log(state);
+    }
+
+  }
+  return dispatch(dispatchObj)
   return (
     <React.Fragment>
       <header className="header"></header>
