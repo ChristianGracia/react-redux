@@ -22,19 +22,22 @@ export default function App(): JSX.Element {
     });
   };
   const toggleFavoriteAction = (episode: IEpisode): IAction => {
-  const episodeInFav = state.favorites.includes(episode)
-  let dispatchObj = {
-    type:'ADD_FAV',
-    payload: episode
-  }
-  if(episodeInFav){
-    dispatchObj = {
-      type: 'REMOVE_FAV',
+    const episodeInFav = state.favorites.includes(episode);
+    let dispatchObj = {
+      type: "ADD_FAV",
       payload: episode
+    };
+    if (episodeInFav) {
+      const favWithoutEpisode = state.favorites.filter(
+        (fav: IEpisode) => fav.id != episode.id
+      );
+      dispatchObj = {
+        type: "REMOVE_FAV",
+        payload: favWithoutEpisode
+      };
     }
-
-  }
-  return dispatch(dispatchObj)
+    return dispatch(dispatchObj);
+  };
   return (
     <React.Fragment>
       <header className="header"></header>
