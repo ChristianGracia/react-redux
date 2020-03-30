@@ -3,7 +3,7 @@ import { Store } from "./Store";
 import "./index.css";
 import { IAction, IEpisode } from "./interfaces/interfaces";
 
-const EpisodeList = React.lazy(() => import("./EpisodesList"));
+const EpisodeList = React.lazy<any>(() => import("./EpisodesList"));
 
 export default function App(): JSX.Element {
   const { state, dispatch } = React.useContext(Store);
@@ -41,7 +41,7 @@ export default function App(): JSX.Element {
     return dispatch(dispatchObj);
   };
   const props = {
-    episodes: state.episode,
+    episodes: state.episodes,
     toggleFavAction: toggleFavoriteAction,
     favorites: state.favorites
   };
@@ -49,12 +49,17 @@ export default function App(): JSX.Element {
   console.log(state);
   return (
     <React.Fragment>
-      <header className="header"></header>
-      <h1>Ricky & Morty Video Picker</h1>
-      <p>Pick your favorite episode!</p>
-      <section className="episodeLayout">
-        <EpisodeList {...props} />
-      </section>
+      <header className="header">
+        <div>
+          <h1>Ricky & Morty Video Picker</h1>
+          <p>Pick your favorite episode!</p>
+        </div>
+      </header>
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <section className="episodeLayout">
+          <EpisodeList {...props} />
+        </section>
+      </React.Suspense>
     </React.Fragment>
   );
 }
