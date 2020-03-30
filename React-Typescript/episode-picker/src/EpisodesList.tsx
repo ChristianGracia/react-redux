@@ -12,7 +12,7 @@ export default function EpisodesList(props: any): Array<JSX.Element> {
           alt={`Rick and morty ${episode.name}`}
         />
         <div>{episode.name}</div>
-        <section>
+        <section style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
             Season: {episode.season} Number: {episode.number}
           </div>

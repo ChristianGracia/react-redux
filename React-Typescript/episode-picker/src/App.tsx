@@ -3,6 +3,8 @@ import { Store } from "./Store";
 import "./index.css";
 import { IAction, IEpisode } from "./interfaces/interfaces";
 
+const EpisodeList = React.lazy(() => import("./EpisodesList"));
+
 export default function App(): JSX.Element {
   const { state, dispatch } = React.useContext(Store);
 
@@ -38,6 +40,12 @@ export default function App(): JSX.Element {
     }
     return dispatch(dispatchObj);
   };
+  const props = {
+    episodes: state.episode,
+    toggleFavAction: toggleFavoriteAction,
+    favorites: state.favorites
+  };
+
   console.log(state);
   return (
     <React.Fragment>
@@ -45,29 +53,7 @@ export default function App(): JSX.Element {
       <h1>Ricky & Morty Video Picker</h1>
       <p>Pick your favorite episode!</p>
       <section className="episodeLayout">
-        {state.episodes.map((episode: IEpisode) => {
-          return (
-            <section key={episode.id} className="episode-box">
-              <img
-                src={episode.image.medium}
-                alt={`Rick and morty ${episode.name}`}
-              />
-              <div>{episode.name}</div>
-              <section>
-                <div>
-                  Season: {episode.season} Number: {episode.number}
-                </div>
-                <button
-                  type="button"
-                  onClick={() => toggleFavoriteAction(episode)}
-                >
-                  {state.favorites.includes(episode) ? "Remove" : "Add"}{" "}
-                  Favorite
-                </button>{" "}
-              </section>
-            </section>
-          );
-        })}
+        <EpisodeList {...props} />
       </section>
     </React.Fragment>
   );
