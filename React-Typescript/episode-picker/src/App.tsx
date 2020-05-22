@@ -55,6 +55,7 @@ export default function App(): JSX.Element {
           <p>Pick your favorite episode!</p>
         </div>
       </header>
+
       <React.Suspense fallback={<div>Loading...</div>}>
         <section className="episodeLayout">
           <EpisodeList {...props} />
